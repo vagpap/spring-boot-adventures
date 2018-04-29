@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: review-service
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        healthCheckInterval: 15s
+        instanceId: ${spring.application.name}:${random.value}
+      host: localhost
+      port: 8500
+      config:
+        enabled: false

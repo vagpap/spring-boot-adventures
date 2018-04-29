@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: product-service
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        healthCheckInterval: 15s
+        instanceId: ${spring.application.name}:${random.value}
+        register: true
+        heartbeat:
+          enabled: true
+      host: localhost
+      port: 8500
+      protocol: http
+      config:
+        enabled: false
+  endpoints:
+    shutdown:
+      enabled: true

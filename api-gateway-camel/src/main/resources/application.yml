@@ -1,0 +1,61 @@
+info:
+  component: API Gateway (Apache Camel)
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+server:
+  port: 8767
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      protocol: http
+      config:
+        enabled: false
+
+security:
+  basic:
+    enable: false
+
+logging:
+  level:
+    ROOT: INFO
+    gr.unisystems: INFO
+    org.springframework.web: INFO
+    org.apache.camel: DEBUG
+
+# the name of Camel
+camel:
+  springboot:
+    name: api-gateway-camel
+
+# what to say
+greeting: Hello World
+
+# how often to trigger the timer
+timer:
+  period: 2000
+
+# expose actuator endpoint via HTTP
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,camelroutes
+  endpoint:
+    health:
+      show-details: always
+    camelroutes:
+      enabled: true
+      read-only: false
+  info:
+    camel:
+      enabled: true

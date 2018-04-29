@@ -1,0 +1,27 @@
+server:
+  port: 0
+
+service:
+  defaultMinMs: 100
+  defaultMaxMs: 200
+
+info:
+  app:
+    name: review-service SpringBoot application (actuator information)
+    description: This is the review service, wrapped in a SpringBoot application
+    version: 1.0.0
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+
+logging:
+  level:
+    gr.unisystems: INFO
