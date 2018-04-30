@@ -23,3 +23,5 @@ Usage:
 5. Trigger a GET request towards: http://localhost:8767/product/1 or http://localhost:8767/review/1
 6. One can start multiple instances of the services, and inspect results of calls. It is expected that the real server port, visible in the service response, changes everytime
 7. Note that management endpoints (Actuator) are enabled by default, which is usually a security risk and should be handled accordningly
+
+The initial source of information for this package was this blog series: http://callistaenterprise.se/blogg/teknik/2015/05/20/blog-series-building-microservices/
